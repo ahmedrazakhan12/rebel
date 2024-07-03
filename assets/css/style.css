@@ -17048,10 +17048,14 @@ body.active-light-mode
 
 /* Extra small devices (phones, 600px and down) */
 
+.navbar-icons{
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(5386%) hue-rotate(183deg) brightness(101%) contrast(105%);
+}
+
 .layer1 {
   position: absolute;
   margin-left: -20px;
-  margin-top: -150px;
+  margin-top: -230px;
   z-index: 1;
   filter: brightness(0) saturate(100%) invert(18%) sepia(80%) saturate(2054%) hue-rotate(276deg) brightness(103%) contrast(89%);
   animation: textAnimation 3s steps(40) infinite; /* Adjust timing and steps as needed */
