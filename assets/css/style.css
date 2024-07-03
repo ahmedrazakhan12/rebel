@@ -16800,6 +16800,7 @@ body.active-light-mode
     margin-top: -10%;
   }
   .slider-area .inner {
+    margin-top: -10%;
     margin-left: 8%;
   }
 }
@@ -16826,7 +16827,7 @@ body.active-light-mode
   .slider-area .inner .title {
     /* text-align: justify; */
     width: 100%;
-    font-size: 6vw;
+    /* font-size: 8vw; */
   }
   .slider-area .inner .descriptiion {
     text-align: justify;
@@ -16835,7 +16836,7 @@ body.active-light-mode
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media (min-width: 768px) and (max-width: 1000px) {
   .slider-area .thumbnail img {
     margin-top: -10%;
     transform: scale(1.2);
@@ -16963,14 +16964,6 @@ body.active-light-mode
 }
 
 
-.layer1 {
-  position: absolute;
-  margin-left: -20px;
-  margin-top: -150px;
-  z-index: 1;
-  filter: brightness(0) saturate(100%) invert(18%) sepia(80%) saturate(2054%) hue-rotate(276deg) brightness(103%) contrast(89%);
-  animation: textAnimation 3s steps(40) infinite; /* Adjust timing and steps as needed */
-}
 
 
 
@@ -16979,6 +16972,16 @@ body.active-light-mode
   .slider-area .layer {
     margin-left: -240px; /* Example change for smaller screens */
     margin-top: 400px; /* Example change for smaller screens */
+    object-fit: contain;
+    width: 700px;
+    z-index: -1;
+  }
+
+
+  .layer1 {
+    /* margin-left:80px; */
+    margin-top: -100%; 
+    /* margin-bottom: 100%; */
     object-fit: contain;
     width: 700px;
     z-index: -1;
@@ -17032,6 +17035,90 @@ body.active-light-mode
     z-index: 1;
     filter: brightness(0) saturate(100%) invert(18%) sepia(80%) saturate(2054%) hue-rotate(276deg) brightness(103%) contrast(89%);
     animation: textAnimation 3s steps(40) infinite; /* Adjust timing and steps as needed */
+  }
+ 
+}
+
+
+
+
+
+
+
+
+/* Extra small devices (phones, 600px and down) */
+
+.layer1 {
+  position: absolute;
+  margin-left: -20px;
+  margin-top: -150px;
+  z-index: 1;
+  filter: brightness(0) saturate(100%) invert(18%) sepia(80%) saturate(2054%) hue-rotate(276deg) brightness(103%) contrast(89%);
+  animation: textAnimation 3s steps(40) infinite; /* Adjust timing and steps as needed */
+}
+
+
+@media (max-width: 480px) {
+ 
+
+
+  .layer1 {
+    /* margin-left:80px; */
+    margin-top: -100%; 
+    /* margin-bottom: 100%; */
+    object-fit: contain;
+    width: 700px;
+    z-index: -1;
+  }
+ 
+}
+
+
+@media (min-width: 480px) and (max-width: 765px) {
+ 
+
+
+  .layer1 {
+    margin-left:80px;
+    margin-top: -450px; 
+    /* margin-bottom: 100%; */
+    object-fit: contain;
+    width: 700px;
+    z-index: -1;
+  }
+ 
+}
+
+
+
+
+@media (min-width: 765px) and (max-width: 992px) {
+ 
+
+
+  .layer1 {
+    margin-left:180px;
+    margin-top: -550px; 
+    /* margin-bottom: 100%; */
+    object-fit: contain;
+    width: 1000px;
+    z-index: -1;
+  }
+ 
+}
+
+
+
+
+@media (min-width: 992px) and (max-width: 1300px) {
+ 
+
+
+  .layer1 {
+    margin-left: -140px;
+    margin-top: -150px;
+    object-fit: contain;
+    z-index: -1;
   }
  
 }
