@@ -17142,6 +17142,15 @@ body.active-light-mode
   list-style-type: disc;
 }
 
+
+.bg-blur-works {
+  background-color: rgba(37, 37, 37, 0.3); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  padding: 20px;
+  border-radius: 10px;
+  list-style-type: disc;
+}
+
 .tokonomic {
   width: 100%;
   max-width: 500px; /* Max width to prevent it from growing too large */
@@ -17150,4 +17159,21 @@ body.active-light-mode
 
 .chartbox {
   margin: auto;
+}
+
+
+
+.gitbook{
+filter: brightness(0) saturate(100%) invert(88%) sepia(99%) saturate(2%) hue-rotate(212deg) brightness(112%) contrast(101%);
+}
+
+.gitbook-bg{
+display: flex;
+justify-content: center;
+align-items: center;
+background: #039be5;   
+border-radius: 50%;
+padding: px;
+width: 32px;
+height:  32px;
 }

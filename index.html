@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="./assets/css/plugins/lightbox.css">
         <link rel="stylesheet" href="./assets/css/style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css">
+        <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
 
     </head>
 <body>
@@ -30,7 +31,7 @@
                     <div class="col-lg-3 col-md-6 col-4">
                         <div class="logo">
                             <a href="index.html">
-                                <img class="logo-light" src="assets/images/logo.png" alt="Corporate Logo">
+                                <img class="logo-light" src="assets/images/logo.png" alt="Corporate Logo" style="margin-left: -60px;">
                             </a>
                         </div>
                     </div>
@@ -40,11 +41,11 @@
                             <nav class="mainmenu-nav d-none d-lg-block">
                                 <ul class="mainmenu">
                                   
-                                    <li><a href="#">About us</a></li>
-                                    <li><a href="#">WHY ?</a></li>
-                                    <li><a href="#">How It’s Work</a></li>
-                                    <li><a href="#">Tokenomic</a></li>
-                                    <li><a href="#">Roadmap</a></li>
+                                    <li><a href="#about">About us</a></li>
+                                    <li><a href="#why">WHY ?</a></li>
+                                    <li><a href="#how">How It’s Work</a></li>
+                                    <li><a href="#tokenomic1">Tokenomic</a></li>
+                                    <li><a href="#roadmap">Roadmap</a></li>
                                     <li><a href="#">WhitePaper</a></li>
                                    
                                   
@@ -110,12 +111,13 @@
                 </div>
                 <ul class="mainmenu">
                    
-                    <li class="with-megamenu  position-relative"><a href="#">About us</a></li>
-                                    <li class="with-megamenu  position-relative"><a href="#">WHY ?</a></li>
-                                    <li class="with-megamenu  position-relative"><a href="#">How It’s Work</a></li>
-                                    <li class="with-megamenu  position-relative"><a href="#">Tokenomic</a></li>
-                                    <li class="with-megamenu  position-relative"><a href="#">Roadmap</a></li>
-                                    <li class="with-megamenu  position-relative"><a href="#">WhitePaper</a></li>
+                                    
+                    <li><a href="#about">About us</a></li>
+                    <li><a href="#why">WHY ?</a></li>
+                    <li><a href="#how">How It’s Work</a></li>
+                    <li><a href="#tokenomic1">Tokenomic</a></li>
+                    <li><a href="#roadmap">Roadmap</a></li>
+                    <li><a href="#">WhitePaper</a></li>
 
                     
                 </ul>
@@ -169,12 +171,12 @@
         </div> -->
 
         <div class="slider-area   height-750 slider-area " style="overflow: hidden;position: relative;">
-            <img class="layer" src="./assets/images/image1.png" alt="">
-            <img class="circle" src="./assets/images/circle.png" alt="" >
+            <img class="layer" src="./assets/images/image1.png" alt="" data-sal="slide-right"  data-sal-duration="400" data-sal-delay="150">
+            <img class="circle" src="./assets/images/circle.png" alt="" data-sal="slide-right"  data-sal-duration="400" data-sal-delay="150">
             <div class="container">
                 <div class="row row--30 align-items-center">
 
-                    <div class="col-lg-6 order-1 order-lg-1">
+                    <div class="col-lg-6 order-1 order-lg-1" data-sal="slide-right"  data-sal-duration="400" data-sal-delay="150">
                         <div class="video-btn">
                             <div class="video-popup icon-center">
                                 <div class="overlay-content">
@@ -185,11 +187,11 @@
                         </div>
                     </div>
 
-                    <div class="order-2 order-lg-2 col-lg-6 mt_md--50 mt_sm--50 mt_lg--30 ">
+                    <div class="order-2 order-lg-2 col-lg-6 mt_md--50 mt_sm--50 mt_lg--30 " data-sal="slide-left"  data-sal-duration="400" data-sal-delay="150">
                         <img class="layer1" src="./assets/images/image1.png" alt="">
 
-                        <div class="inner text-left">
-                            <h1 class="title color-white">Legacy Meets Liquidity is at interaection
+                        <div class="inner text-left" >
+                            <h1 class="title color-white" >Legacy Meets Liquidity is at interaection
                                <span class="title" style="text-align: left;color: #CC3CD9;;">Between TradFi &DeFi
                                 </span>
                                 </h1>
@@ -207,7 +209,7 @@
         <!-- End Slider Area  -->
 
         <!-- Start progress style-large  -->
-        <div class="rainbow-progressbar-area rainbow-section-gap">
+        <div class="rainbow-progressbar-area rainbow-section-gap"  id="about" data-sal="slide-up"  data-sal-duration="400" data-sal-delay="150">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -245,8 +247,8 @@
         </div>
         <!-- End Seperator Area  -->
 
-        <div class="rainbow-portfolio-area rainbow-section-gap masonary-wrapper-activation">
-            <div class="container-fluid plr--30">
+        <div class="rainbow-portfolio-area rainbow-section-gap masonary-wrapper-activation"  id="why" data-sal="slide-up"  data-sal-duration="400" data-sal-delay="150">
+            <div class="container-fluid plr--30" >
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title text-center mb--50" data-sal="slide-up" data-sal-duration="400" data-sal-delay="150">
@@ -441,8 +443,103 @@
                 
             </div>
         </div>
+
+
+
+        <div class="rainbow-progressbar-area rainbow-section-gap"  id="how" data-sal="slide-up"  data-sal-duration="400" data-sal-delay="150">
+            <div class="container ">
+               
+                <div class="row ">
+
+
+                    <div class="col-lg-12 col-md-12 ">
+                        <div class=" p-6">
+                            <h2 class="title w-600 text-center "  style="margin-bottom: 80px;" > HOW IT'S WORKS</h2>
+
+                        <h5 > • Buy real-world
+                            Asset Token </h5>
+                        <p>With the Rebel App , you can easily purchase RWA tokens,like Rebel Gold Token , using either crypto or Fiat currency
+
+                        </p>
+                     
+                        <h5 > •
+                            EARN YIELD AND
+                            GROW TREASURY
+                            </h5>
+                        <p>Add your token to the REBEL Vaults and  earn yield so you can grow your treasury
+                        </p>
+                        <h5 > •
+                            Get your token in 
+your wallet
+
+                        </h5>
+                            <p>After the transaction is complete , we'll mint your token and transfers them directly to your wallet 
+                            </p>
+                            <h5 > • Redeem your token
+                            </h5>
+
+                            <p>You can redeem your RWA tokens with REBEL for either crypto ,fiat , or the asset it self</p>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-lg-12 p-4   px-4 bg-blur ">
+                        
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+
+        <div id="tokenomic1" class="rainbow-portfolio-area rainbow-section-gap masonary-wrapper-activation" >
+            <div class="container-fluid plr--30">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title text-center mb--50" data-sal="slide-up" data-sal-duration="400" data-sal-delay="150">
+                            <h2 class="title w-600 mb--20" data-sal="slide-up"  data-sal-duration="400" data-sal-delay="150">Tokenomic</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-12" data-sal="slide-right"  data-sal-duration="400" data-sal-delay="150">
+                                    <div class="chartbox mx-auto">
+                                      <div class="tokonomic">
+                                        <canvas id="tokenomic"></canvas>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  
+                                <div class="col-lg-6 col-md-12" data-sal="slide-left"  data-sal-duration="400" data-sal-delay="150">
+                                    <div class="bg-blur">
+                                        <ul style="list-style-type: disc;">
+                                            <li> PreSale 20% (200.000.000 $REB)</li>
+                                            <li>20% unlock TGE, 80% Vesting 8 month with monthly claim</li>
+                                            <li>Public Sale 10% (100.000.000 $REB)</li>
+                                            <li>25% unlock TGE, cliff 1 month, 75% vesting 5 month with monthly claim</li>
+                                            <li>Team 10% (100.000.000 $REB) 2% unlock TGE, cliff 12 month, vesting 5 month claim monthly</li>
+                                            <li>Partnership & KOL 2% (20.000.000 $REB) 100% unlock TGE</li>
+                                            <li>Community incentives 5% (50.000.000 $REB) 100% TGE after 7 days listing</li>
+                                            <li>Liquidity 30% (300.000.000 $REB)</li>
+                                            <li> Marketing 8% (80.000.000 $REB)</li>
+                                            <li>Treasury & ecosystem 15% (150.000.000 $REB)</li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+
+              
+            </div>
+        </div>
         <!-- Start Timeline-Style-Four  -->
-        <div class="rainbow-timeline-area rainbow-section-gap">
+        <div class="rainbow-timeline-area rainbow-section-gap"  id="roadmap" data-sal="slide-up"  data-sal-duration="400" data-sal-delay="150">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -556,54 +653,7 @@
         <!-- End Seperator Area  -->
 
         <!-- Start Portfolio Area  -->
-        <div class="rainbow-portfolio-area rainbow-section-gap masonary-wrapper-activation">
-            <div class="container-fluid plr--30">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title text-center mb--50" data-sal="slide-up" data-sal-duration="400" data-sal-delay="150">
-                            <h2 class="title w-600 mb--20">Tokenomic</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="chartbox mx-auto">
-                                      <div class="tokonomic">
-                                        <canvas id="tokenomic"></canvas>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="bg-blur">
-                                        <ul style="list-style-type: disc;">
-                                            <li> PreSale 20% (200.000.000 $REB)</li>
-                                            <li>20% unlock TGE, 80% Vesting 8 month with monthly claim</li>
-                                            <li>Public Sale 10% (100.000.000 $REB)</li>
-                                            <li>25% unlock TGE, cliff 1 month, 75% vesting 5 month with monthly claim</li>
-                                            <li>Team 10% (100.000.000 $REB) 2% unlock TGE, cliff 12 month, vesting 5 month claim monthly</li>
-                                            <li>Partnership & KOL 2% (20.000.000 $REB) 100% unlock TGE</li>
-                                            <li>Community incentives 5% (50.000.000 $REB) 100% TGE after 7 days listing</li>
-                                            <li>Liquidity 30% (300.000.000 $REB)</li>
-                                            <li> Marketing 8% (80.000.000 $REB)</li>
-                                            <li>Treasury & ecosystem 15% (150.000.000 $REB)</li>
-                                        </ul>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                    </div>
-                </div>
-
-              
-            </div>
-        </div>
+       
         <!-- End Portfolio Area  -->
 
         <!-- Start Seperator Area  -->
@@ -614,164 +664,18 @@
         </div>
         <!-- End Seperator Area  -->
 
-        <!-- Start Service-6 Area  -->
-        <div class="rainbow-service-area rainbow-section-gap ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title text-center" data-sal="slide-up" data-sal-duration="400" data-sal-delay="150">
-                            <h4 class="subtitle ">
-                                <span class="theme-gradient">What we can do for you</span>
-                            </h4>
-                            <h2 class="title w-600 mb--20">Services provide for you.</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row row--15 service-wrapper">
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-sal="slide-up" data-sal-duration="400" data-sal-delay="200">
-                        <div class="service service__style--1 icon-circle-style with-working-process text-center">
-                            <div class="icon">
-                                <div class="line"></div>1
-                            </div>
-                            <div class="content">
-                                <h4 class="title"><a href="#">Awarded Design</a></h4>
-                                <p class="description b1 color-gray mb--0">There are many variations variations of.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-sal="slide-up" data-sal-duration="400" data-sal-delay="300">
-                        <div class="service service__style--1 icon-circle-style with-working-process text-center">
-                            <div class="icon">
-                                <div class="line"></div>2
-                            </div>
-                            <div class="content">
-                                <h4 class="title"><a href="#">Design &amp; Creative</a></h4>
-                                <p class="description b1 color-gray mb--0">Passages there are many variations have.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-sal="slide-up" data-sal-duration="400" data-sal-delay="400">
-                        <div class="service service__style--1 icon-circle-style with-working-process text-center">
-                            <div class="icon">
-                                <div class="line"></div>3
-                            </div>
-                            <div class="content">
-                                <h4 class="title"><a href="#">App Development</a></h4>
-                                <p class="description b1 color-gray mb--0">Variations There are many variations of Lorem.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-sal="slide-up" data-sal-duration="400" data-sal-delay="500">
-                        <div class="service service__style--1 icon-circle-style with-working-process text-center">
-                            <div class="icon">
-                                <div class="line"></div>4
-                            </div>
-                            <div class="content">
-                                <h4 class="title"><a href="#">Product Designer</a></h4>
-                                <p class="description b1 color-gray mb--0">Variations There are many variations of Lorem.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Service-6 Area  -->
-
-        <!-- Start Seperator Area  -->
-        <div class="rbt-separator-mid">
-            <div class="container">
-                <hr class="rbt-separator m-0">
-            </div>
-        </div>
-        <!-- End Seperator Area  -->
-
-        <!-- Start Blog Area  -->
-        <div class="blog-area rainbow-section-gap">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title text-center" data-sal="slide-up" data-sal-duration="400" data-sal-delay="150">
-                            <h4 class="subtitle "><span class="theme-gradient">Latests News</span></h4>
-                            <h2 class="title w-600 mb--20">Latest News From The Digital World.
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row row--15">
-
-                    <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt--30" data-sal="slide-up" data-sal-duration="700">
-                        <div class="rainbow-card box-card-style-default">
-                            <div class="inner">
-                                <div class="thumbnail"><a class="image" href="blog-details.html"><img src="assets/images/blog/blog-01.jpg" alt="Blog Image"></a></div>
-                                <div class="content">
-                                    <ul class="rainbow-meta-list">
-                                        <li><a href="#">Irin Pervin</a></li>
-                                        <li class="separator">/</li>
-                                        <li>10 Dec 2021</li>
-                                    </ul>
-                                    <h4 class="title"><a href="blog-details.html">Best Corporate Tips You Will Read This
-                                            Year.</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt--30" data-sal="slide-up" data-sal-duration="700" data-sal-delay="100">
-                        <div class="rainbow-card box-card-style-default">
-                            <div class="inner">
-                                <div class="thumbnail"><a class="image" href="blog-details.html"><img src="assets/images/blog/blog-02.jpg" alt="Blog Image"></a></div>
-                                <div class="content">
-                                    <ul class="rainbow-meta-list">
-                                        <li><a href="#">Fatima Asrafy</a></li>
-                                        <li class="separator">/</li>
-                                        <li>30 Nov 2021</li>
-                                    </ul>
-                                    <h4 class="title"><a href="blog-details.html">Should Fixing Corporate Take 100
-                                            Steps.</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt--30" data-sal="slide-up" data-sal-duration="700" data-sal-delay="200">
-                        <div class="rainbow-card box-card-style-default">
-                            <div class="inner">
-                                <div class="thumbnail">
-                                    <a class="image" href="blog-details.html"><img src="assets/images/blog/blog-03.jpg" alt="Blog Image"></a>
-                                </div>
-                                <div class="content">
-                                    <ul class="rainbow-meta-list">
-                                        <li><a href="#">John Dou</a></li>
-                                        <li class="separator">/</li>
-                                        <li>12 Oct 2021</li>
-                                    </ul>
-                                    <h4 class="title"><a href="blog-details.html">The Next 100 Things To Immed Iately Do
-                                            About.</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Blog Area  -->
+        
 
         <!-- Start Footer Area  -->
         <footer class="rainbow-footer footer-style-default variation-two">
             <div class="rainbow-callto-action clltoaction-style-default style-7">
                 <div class="container">
-                    <div class="row row--0 align-items-center content-wrapper">
+                    <!-- <div class="row row--0 align-items-center content-wrapper">
                         <div class="col-lg-8 col-md-8">
                             <div class="inner">
                                 <div class="content text-left">
                                     <div class="logo">
-                                        <a href="index.html">
-                                            <img class="logo-light" src="assets/images/logo/logo.png" alt="Corporate Logo">
-                                            <img class="logo-dark" src="assets/images/logo/logo-dark.png" alt="Corporate Logo">
-                                        </a>
+                                        
                                     </div>
                                     <p class="subtitle" data-sal="slide-up" data-sal-duration="400" data-sal-delay="150">If you want to create a corporate template you can purshace now
                                         our doob
@@ -786,21 +690,27 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="footer-top">
                 <div class="container">
                     <div class="row">
+                        <a href="index.html" style="margin-top: -100px;">
+                            <img class="logo-light" src="./assets/images/logo.png" alt="Corporate Logo" style="width: 300px;margin-left: -70px;">
+                            <!-- <img class="logo-dark" src="./assets/images/logo.png" alt="Corporate Logo"> -->
+                        </a>
                         <div class="col-lg-2 col-md-6 col-sm-6 col-12">
                             <div class="rainbow-footer-widget">
                                 <h4 class="title">Services</h4>
                                 <div class="inner">
                                     <ul class="footer-link link-hover">
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="portfolio.html">Portfolio</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                        <li><a href="service.html">Service</a></li>
+                                        <li class="with-megamenu  position-relative"><a href="#">About us</a></li>
+                                        <li class="with-megamenu  position-relative"><a href="#">WHY ?</a></li>
+                                        <li class="with-megamenu  position-relative"><a href="#">How It’s Work</a></li>
+                                        <li class="with-megamenu  position-relative"><a href="#">Tokenomic</a></li>
+                                        <li class="with-megamenu  position-relative"><a href="#">Roadmap</a></li>
+                                        <li class="with-megamenu  position-relative"><a href="#">WhitePaper</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -811,10 +721,10 @@
                                     <h4 class="title">Solutions</h4>
                                     <div class="inner">
                                         <ul class="footer-link link-hover">
-                                            <li><a href="brand.html">Brand</a></li>
-                                            <li><a href="call-to-action.html">call To Action</a></li>
-                                            <li><a href="counter.html">Counter</a></li>
-                                            <li><a href="service.html">Service</a></li>
+                                            <li><a href="#">Brand</a></li>
+                                            <li><a href="#">call To Action</a></li>
+                                            <li><a href="#">Counter</a></li>
+                                            <li><a href="#">Service</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -825,10 +735,10 @@
                                 <h4 class="title">Company</h4>
                                 <div class="inner">
                                     <ul class="footer-link link-hover">
-                                        <li><a href="pricing.html">Pricing</a></li>
-                                        <li><a href="tab.html">Tab Styles</a></li>
-                                        <li><a href="service.html">Service</a></li>
-                                        <li><a href="social-share.html">Social</a></li>
+                                        <li><a href="#">Pricing</a></li>
+                                        <li><a href="#">Tab Styles</a></li>
+                                        <li><a href="#">Service</a></li>
+                                        <li><a href="#">Social</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -838,10 +748,10 @@
                                 <h4 class="title">Resources</h4>
                                 <div class="inner">
                                     <ul class="footer-link link-hover">
-                                        <li><a href="team.html">Team</a></li>
-                                        <li><a href="testimonial.html">Testimonial</a></li>
-                                        <li><a href="service.html">Service</a></li>
-                                        <li><a href="timeline.html">Timeline</a></li>
+                                        <li><a href="#">Team</a></li>
+                                        <li><a href="#">Testimonial</a></li>
+                                        <li><a href="#">Service</a></li>
+                                        <li><a href="#">Timeline</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -850,22 +760,20 @@
                             <div class="rainbow-footer-widget">
                                 <h4 class="title">Stay With Us.</h4>
                                 <div class="inner">
-                                    <h6 class="subtitle">2000+ Our clients are subscribe Around the World</h6>
+                                    <h6 class="subtitle"> Our clients are subscribe Around the World</h6>
                                     <ul class="social-icon social-default justify-content-start">
                                         <li><a href="https://www.facebook.com/">
-                                                <i class="feather-facebook"></i>
+                                             <img src="./assets/images/twitter.png" alt="" style="width: 30px;">
                                             </a>
                                         </li>
                                         <li><a href="https://www.twitter.com">
-                                                <i class="feather-twitter"></i>
+                                             <img src="./assets/images/telegram.png" alt="" style="width: 30px;">
                                             </a>
                                         </li>
-                                        <li><a href="https://www.instagram.com/">
-                                                <i class="feather-instagram"></i>
-                                            </a>
-                                        </li>
-                                        <li><a href="https://www.linkdin.com/">
-                                                <i class="feather-linkedin"></i>
+                                        <li><a href="https://www.instagram.com/" style="display: flex;align-items: center;justify-content: center">
+                                             <div class="gitbook-bg">
+                                                <img src="./assets/images/gitbook.png" alt="" style="width: 40px;" class="gitbook">
+                                             </div>
                                             </a>
                                         </li>
                                     </ul>
@@ -885,20 +793,20 @@
                         <div class="copyright-left">
                             <ul class="ft-menu link-hover">
                                 <li>
-                                    <a href="privacy-policy.html">Privacy Policy</a>
+                                    <a href="#">Privacy Policy</a>
                                 </li>
                                 <li>
                                     <a href="#">Terms And Condition</a>
                                 </li>
                                 <li>
-                                    <a href="contact.html">Contact Us</a>
+                                    <a href="#">Contact Us</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-4 col-sm-12 col-12">
                         <div class="copyright-right text-center text-lg-end">
-                            <p class="copyright-text">© Doob 2022</p>
+                            <p class="copyright-text" >© Rebel</p>
                         </div>
                     </div>
                 </div>
@@ -910,7 +818,7 @@
     <!-- All Scripts  -->
     <!-- Start Top To Bottom Area  -->
     <div class="rainbow-back-top">
-        <i class="feather-arrow-up"></i>
+        <img src="./assets/images/up-arrow.png"width="10px" alt="" class="navbar-icons">
     </div>
     <!-- End Top To Bottom Area  -->
     <!-- JS
@@ -937,6 +845,8 @@
     
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+
     <!-- Main JS -->
     <script src="./assets/js/vendor/main.js"></script>
 
