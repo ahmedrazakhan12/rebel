@@ -452,3 +452,57 @@
 
 
 
+Chart.register(ChartDataLabels);
+
+  var labels = [
+    'PreSale 20%',
+    'Public Sale 10%',
+    'Team 10%',
+    'Linquidity 30%',
+    'Marketing 8%',
+    'Treasury & eco system 15%',
+    'Partnership & KOL 2%',
+    '                                   Community 5%',
+  ];
+  var data = {
+    labels: labels,
+    datasets: [{
+      label: 'Tokenomic',
+      backgroundColor: [
+        '#6D0076',
+        '#028CA4',
+        // '#aaa1c8',
+        '#8C6ADD',
+        '#9F0089',
+        '#947DFF',
+      ],
+      borderColor: 'transparent',
+      data: [100000000, 80000000, 80000000, 200000000, 80000000, 90000000, 30000000, 20000000],
+    }]
+  };
+  var config = {
+    type: 'doughnut',
+    data: data,
+    options: {
+        layout: {
+          padding: 50
+        },
+        plugins: {
+            legend: {
+                display: false,
+            },
+            datalabels: {
+              anchor: 'end',
+              align: 'end',
+              formatter: function(value, context) {
+                return context.chart.data.labels[context.dataIndex] + "\n" + "";
+              }
+            }
+        }
+    }
+  };
+  
+  var tokenChart = new Chart(
+    document.getElementById('tokenomic'),
+    config
+  );

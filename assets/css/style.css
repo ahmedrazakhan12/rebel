@@ -82,7 +82,7 @@
 /*-- Variables --*/
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 :root {
-  --color-primary: #059dff;
+  --color-primary: #CC3CD9;
   --color-primary-rgba: rgb(5, 157, 255);
   --color-primary-rgba-2: rgba(5, 157, 255, 0.15);
   --color-primary-alt: #059dff;
@@ -12128,6 +12128,11 @@ Timeline Area
 .rainbow-timeline-single .rainbow-timeline {
   text-align: center;
 }
+@media (min-width: 767px) {
+  .roadmap_ul {
+    text-align: left;
+  } 
+}
 .rainbow-timeline-single .rainbow-timeline .progress-line {
   position: relative;
   border-radius: 0px;
@@ -17125,4 +17130,24 @@ body.active-light-mode
     z-index: -1;
   }
  
+}
+
+
+
+.bg-blur {
+  background-color: rgba(37, 37, 37, 0.3); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  padding: 20px;
+  border-radius: 10px;
+  list-style-type: disc;
+}
+
+.tokonomic {
+  width: 100%;
+  max-width: 500px; /* Max width to prevent it from growing too large */
+  margin: auto;
+}
+
+.chartbox {
+  margin: auto;
 }
