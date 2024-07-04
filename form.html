@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: consolas;
+      }
+      .clock {
+        margin-top: -80px;
+        margin-bottom: -50px;
+        position: relative;
+        width: 700px;
+        height: 250px;
+        /* background: rgba(255,255,255,0.05); */
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        /* z-index: 1; */
+        border-radius: 20px;
+        /* border: 1px solid rgba(255,255,255,0.1); */
+        /* backdrop-filter: blur(20px); */
+      }
+      .clock .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        /* margin: 0;s */
+      }
+      .clock .container h2 {
+        font-size: 4vw;
+        color: #fff;
+      }
+      .clock .container h2:nth-child(odd) {
+        padding: 5px 15px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        margin: 0 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .clock .container h2#seconds {
+        color: #f9d524;
+      }
+      #ampm {
+        position: relative;
+        top: -50px;
+        font-size: 2em;
+        color: #fff;
+        font-weight: 700;
+      }
+      .modal {
+        width: fit-content;
+        height: fit-content;
+        /* background: rgba(9, 0, 24, 0.184);
+  backdrop-filter: blur(20px); */
+        box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01),
+          0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09),
+          0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+        border-radius: 26px;
+        width: 100%;
+      }
+
+      .form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .payment--options {
+        width: calc(100% - 40px);
+        display: grid;
+        grid-template-columns: 33% 34% 33%;
+        gap: 20px;
+        padding: 10px;
+      }
+
+      .payment--options button {
+        height: 55px;
+        background: #f2f2f2;
+        border-radius: 11px;
+        padding: 0;
+        border: 0;
+        outline: none;
+      }
+
+      .payment--options button svg {
+        height: 18px;
+      }
+
+      .payment--options button:last-child svg {
+        height: 22px;
+      }
+
+      .separator {
+        width: calc(100% - 20px);
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: 10px;
+        color: #8b8e98;
+        margin: 0 10px;
+      }
+
+      .separator > p {
+        word-break: keep-all;
+        display: block;
+        text-align: center;
+        font-weight: 600;
+        font-size: 2vw;
+        margin: auto;
+      }
+
+      .separator .line {
+        display: inline-block;
+        width: 100%;
+        height: 1px;
+        border: 0;
+        background-color: #e8e8e8;
+        margin: auto;
+      }
+
+      .credit-card-info--form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .input_container {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: 4fr 4fr;
+        gap: 15px;
+      }
+
+      .split input {
+        width: 100%;
+      }
+
+      .input_label {
+        font-size: 10px;
+        color: #8b8e98;
+        font-weight: 600;
+      }
+
+      .input_field {
+        width: auto;
+        height: 40px;
+        padding: 0 0 0 16px;
+        border-radius: 9px;
+        outline: none;
+        background-color: #f2f2f2;
+        border: 1px solid #e5e5e500;
+        transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+      }
+
+      .input_field:focus {
+        border: 1px solid transparent;
+        box-shadow: 0px 0px 0px 2px #242424;
+        background-color: transparent;
+      }
+
+      .purchase--btn {
+        height: 55px;
+        background: #f2f2f2;
+        border-radius: 11px;
+        border: 0;
+        outline: none;
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 700;
+        background: linear-gradient(
+          180deg,
+          #363636 0%,
+          #1b1b1b 50%,
+          #000000 100%
+        );
+        /* box-shadow: 0px 0px 1px 1px #4c014fc4, 0px 0px 0px 4px #0000003a; */
+
+        transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+      }
+
+      .purchase--btn:hover {
+        box-shadow: 0px 0px 15px 1px #4c014fc4, 0px 0px 0px 4px #0000003a;
+      }
+
+      /* Reset input number styles */
+      .input_field::-webkit-outer-spin-button,
+      .input_field::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      .input_field[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+      .paste-button {
+        position: relative;
+        display: block;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .button {
+        background-color: #7c0287;
+        color: #212121;
+        padding: 10px 15px;
+        font-size: 15px;
+        /* font-weight: bold; */
+        border: 2px solid transparent;
+        border-radius: 15px;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+        color: white;
+      }
+
+      .dropdown-content {
+        display: none;
+        font-size: 13px;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        background-color: #212121;
+        border: 2px solid #7c0287;
+        border-radius: 0px 0px 15px 15px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      }
+
+      .dropdown-content a {
+        color: #f2ecf3;
+        padding: 8px 10px;
+        text-decoration: none;
+        display: block;
+        transition: 0.1s;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #7c0287a8;
+        color: #ffffff;
+      }
+
+      .dropdown-content a:focus {
+        background-color: #212121;
+        color: #7c0287;
+      }
+
+      .dropdown-content .top:hover {
+        border-radius: 0px 13px 0px 0px;
+      }
+
+      .dropdown-content .bottom:hover {
+        border-radius: 0px 0px 13px 13px;
+      }
+
+      .paste-button:hover button {
+        border-radius: 15px 15px 0px 0px;
+      }
+
+      .paste-button:hover .dropdown-content {
+        display: block;
+      }
+
+      .text_dolar{
+                font-size:12vw; 
+            }
+     
+      @media (max-width: 768px) {
+            .clock {
+                width: 100%;
+            }
+
+            .clock .container h2 {
+                font-size: 6vw;
+            }
+        }
+
+        @media (max-width: 480px) {
+        .clock {
+                width: 100%;
+            }
+
+            .clock .container  {
+                width: 120px;
+            }
+            .text_dolar{
+                font-size: 4vw; 
+            }
+           
+        }   
+
+        
+    </style>
+
+    <!-- CSS ============================================ -->
+    <!-- <link rel="stylesheet" href="./assets/css/vendor/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="./assets/css/plugins/animation.css" />
+    <link rel="stylesheet" href="./assets/css/plugins/feature.css" />
+    <link rel="stylesheet" href="./assets/css/plugins/magnify.min.css" />
+    <link rel="stylesheet" href="./assets/css/plugins/slick.css" />
+    <link rel="stylesheet" href="./assets/css/plugins/slick-theme.css" />
+    <link rel="stylesheet" href="./assets/css/plugins/lightbox.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css"
+    />
+    <link
+      href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="modal bg-blur">
+      <form class="form">
+          <section style="margin: auto;">
+              <h3 style="text-align: center;margin-bottom: 40px;">BUY $SPY</h3>
+              <div class="clock">
+                  <div class="container">
+                      <h2 id="hours">00</h2>
+                      <h2 class="dot">:</h2>
+                      <h2 id="hour">00</h2>
+                      <h2 class="dot">:</h2>
+                      <h2 id="minute">09</h2>
+                      <h2 class="dot">:</h2>
+                      <h2 id="seconds">24</h2>
+                      <h2 id="seconds"></h2>
+    
+                </div>
+              </div>
+            </section>
+
+      
+        <div class="separator">
+          <hr class="line" />
+          <p class="text_dolar" style=" background-color: none;">1 $SPY = $0.00147</p>
+          <hr class="line" />
+        </div>
+        <div class="credit-card-info--form">
+          <div class="input_container">
+            <!-- <label for="password_field" class="input_label">ETH</label>
+                <div class="split">
+                <input id="password_field" class="input_field" type="text" name="input-name" title="Expiry Date" placeholder="01/23">
+                <input id="password_field" class="input_field" type="number" name="cvv" title="CVV" placeholder="CVV">
+              </div> -->
+
+            <div class="paste-button">
+              <button class="button" id="currency-button">
+                Select your currency <span style="float: right">▼</span>
+              </button>
+              <div class="dropdown-content">
+                <a id="eth" class="top" href="#">ETH</a>
+                <a id="usdc" class="middle" href="#">USDC</a>
+                <a id="card" class="middle" href="#">CARD</a>
+                <a id="usdt" class="bottom" href="#">USDT</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="input_container">
+            <label for="password_field" class="input_label">Eth You pay:</label>
+            <input
+              id="password_field"
+              class="input_field"
+              type="number"
+              name="input-name"
+              title="Expiry Date"
+              placeholder="0"
+            />
+          </div>
+        </div>
+        <button class="purchase--btn">CONNECT WALLET</button>
+      </form>
+    </div>
+
+    <script>
+      document.querySelectorAll(".dropdown-content a").forEach((item) => {
+        item.addEventListener("click", (event) => {
+          // Get the selected currency text
+          const selectedCurrency = event.target.textContent;
+          // Update the button text
+          document.getElementById(
+            "currency-button"
+          ).innerHTML = ` ${selectedCurrency}`;
+        });
+      });
+
+      function clock() {
+        let hours = document.getElementById("hour");
+        let minute = document.getElementById("minute");
+        let seconds = document.getElementById("seconds");
+        let ampm = document.getElementById("ampm");
+
+        let h = new Date().getHours();
+        let m = new Date().getMinutes();
+        let s = new Date().getSeconds();
+        var am = "AM";
+
+        //convert 24 to 12hrs
+        if (h >= 12) {
+          h = h - 12;
+          var am = "PM";
+        }
+        //Add 0 to begining if less than 10
+        h = h < 10 ? "0" + h : h;
+        m = m < 10 ? "0" + m : m;
+        s = s < 10 ? "0" + s : s;
+
+        hours.innerHTML = h;
+        minute.innerHTML = m;
+        seconds.innerHTML = s;
+        ampm.innerHTML = am;
+      }
+      var interval = setInterval(clock, 1000);
+    </script>
+  </body>
+</html>
