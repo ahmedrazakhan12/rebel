@@ -17179,4 +17179,11 @@ height:  32px;
 }
 
 
+.presale{
+  color: white;
+  }
 
+.presale:hover{
+color: white;
+/* background: #c9c9c9; */
+}

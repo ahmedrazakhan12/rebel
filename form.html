@@ -226,6 +226,8 @@
         display: none;
         font-size: 13px;
         position: absolute;
+        overflow-x: hidden;
+        height: 120px;
         z-index: 1;
         width: 100%;
         background-color: #212121;
@@ -253,15 +255,15 @@
       }
 
       .dropdown-content .top:hover {
-        border-radius: 0px 13px 0px 0px;
+        /* border-radius: 0px 13px 0px 0px; */
       }
 
       .dropdown-content .bottom:hover {
-        border-radius: 0px 0px 13px 13px;
+        /* border-radius: 0px 0px 13px 13px; */
       }
 
       .paste-button:hover button {
-        border-radius: 15px 15px 0px 0px;
+        /* border-radius: 15px 15px 0px 0px; */
       }
 
       .paste-button:hover .dropdown-content {
@@ -272,6 +274,13 @@
                 font-size:12vw; 
             }
      
+
+            
+            .btn-text{
+              font-size: 1.5vw;
+              text-align: left;
+              width: 13%;
+            }
       @media (max-width: 768px) {
             .clock {
                 width: 100%;
@@ -279,6 +288,11 @@
 
             .clock .container h2 {
                 font-size: 6vw;
+            }
+            .btn-text{
+              font-size: 3vw;
+              text-align: center;
+              width: 50%;
             }
         }
 
@@ -296,7 +310,26 @@
            
         }   
 
-        
+/* For WebKit browsers */
+::-webkit-scrollbar {
+  background: rgb(0, 0, 0);
+  height: 10px; /* This should set the height for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7c0287;
+}
+
+/* For vertical scrollbars */
+html::-webkit-scrollbar {
+  width: 10px; /* This should set the width for vertical scrollbars */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin; /* Makes the scrollbar thin */
+  scrollbar-color: #7c0287 rgb(0, 0, 0); /* thumb color and track color */
+}
     </style>
 
     <!-- CSS ============================================ -->
@@ -346,26 +379,55 @@
         </div>
         <div class="credit-card-info--form">
           <div class="input_container">
-            <!-- <label for="password_field" class="input_label">ETH</label>
-                <div class="split">
-                <input id="password_field" class="input_field" type="text" name="input-name" title="Expiry Date" placeholder="01/23">
-                <input id="password_field" class="input_field" type="number" name="cvv" title="CVV" placeholder="CVV">
-              </div> -->
-
             <div class="paste-button">
-              <button type="button" class="button" id="currency-button">
-                Select your currency <span style="float: right">▼</span>
+              <button type="button" class="button" id="currency-button-1" style="padding: 15px;color: black;">
+                Choose a chain <span style="float: right">▼</span>
               </button>
-              <div class="dropdown-content">
-                <a id="eth" class="top" href="#">ETH</a>
-                <a id="usdc" class="middle" href="#">USDC</a>
-                <a id="card" class="middle" href="#">CARD</a>
-                <a id="usdt" class="bottom" href="#">USDT</a>
+              <div class="dropdown-content first_input" style="font: 10px;">
+                <a class="middle" href="#">ETH</a>
+                <a class="middle" href="#">BSC</a>
+                <a class="middle" href="#">PLG</a>
+                <a class="middle" href="#">ARB</a>
+                <a  class="middle" href="#">BASE</a>
+                <a  class="middle" href="#">AVAX</a>
               </div>
             </div>
           </div>
+        
+          <div class="input_container" style="display: flex;">
+        
+            <div class="paste-button" style="width: 100%;display: flex;">
+              <button type="button" class="btn-text" id="currency-button-2" style=" border-top-right-radius: none;border-bottom-right-radius:none ;border-top-left-radius:10px ;border-bottom-left-radius: 10px;padding: 10px;background-color: #7c0287;border: none;">
+                <span style="float: left; padding: 5px;">▼</span>
+                <!-- <span style="float: right; background: #d2d2d274; border-radius: 5px; padding: 5px 10px;">MAX</span> -->
 
-          <div class="input_container">
+              </button>
+              <div class="dropdown-content second_input" style="width:100%;margin-top: 50px;">
+                <a class="middle" href="#">ETHERIUM</a>
+                <a  class="middle" href="#">USDT</a>
+                <a  class="bottom" href="#">USDC</a>
+              </div>
+              <input placeholder="0" type="number" style="border-top-right-radius: 10px;border-bottom-right-radius:10px ;border-top-left-radius:0px ;border-bottom-left-radius: 0px;padding: 10px;">
+            </div>
+          </div>
+        
+
+
+          <div class="input_container" style="display: flex;">
+        
+            <div class="paste-button" style="width: 100%;display: flex;">
+              <div  style=" border-top-right-radius: none;border-bottom-right-radius:none ;border-top-left-radius:10px ;border-bottom-left-radius: 10px;padding: 10px;background-color: rgb(39, 37, 37);border: none;">
+                <span style="float: left; padding: 5px;"><img src="./assets/images/logo_single-removebg-previewe.png" style="width: 30px;" alt=""></span>
+                <!-- <span style="float: right; background: #d2d2d274; border-radius: 5px; padding: 5px 10px;">MAX</span> -->
+
+              </div>
+            
+              <input placeholder="0" type="number" style="border-top-right-radius: 10px;border-bottom-right-radius:10px ;border-top-left-radius:0px ;border-bottom-left-radius: 0px;padding: 10px;">
+            </div>
+          </div>
+
+
+          <!-- <div class="input_container">
             <label for="password_field" class="input_label">Eth You pay:</label>
             <input
               id="password_field"
@@ -374,24 +436,36 @@
               name="input-name"
               title="Expiry Date"
               placeholder="0"
+              style="padding: 10px;"
             />
-          </div>
+          </div> -->
         </div>
-        <button class="purchase--btn">CONNECT WALLET</button>
+        <button class="purchase--btn" >CONNECT WALLET</button>
       </form>
     </div>
 
     <script>
-      document.querySelectorAll(".dropdown-content a").forEach((item) => {
-        item.addEventListener("click", (event) => {
-          // Get the selected currency text
-          const selectedCurrency = event.target.textContent;
-          // Update the button text
-          document.getElementById(
-            "currency-button"
-          ).innerHTML = ` ${selectedCurrency}`;
-        });
-      });
+     document.querySelectorAll(".first_input a").forEach((item) => {
+    item.addEventListener("click", (event) => {
+      // Get the selected currency text
+      const selectedCurrency = event.target.textContent;
+      // Update the button text for the first button
+      document.getElementById(
+        "currency-button-1"
+      ).innerHTML = `<span style="font-size: 17px;"> ${selectedCurrency}</span> <span style="float: right">▼</span>`;
+    });
+  });
+
+  document.querySelectorAll(".second_input a").forEach((item) => {
+    item.addEventListener("click", (event) => {
+      // Get the selected currency text
+      const selectedCurrency2 = event.target.textContent;
+      // Update the button text for the second button
+      document.getElementById(
+        "currency-button-2"
+      ).innerHTML = ` ${selectedCurrency2} <span style="float: right">▼</span>`;
+    });
+  });
 
       function clock() {
         let hours = document.getElementById("hour");
