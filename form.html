@@ -112,7 +112,7 @@
         display: block;
         text-align: center;
         font-weight: 600;
-        font-size: 2vw;
+        /* font-size: 3vw; */
         margin: auto;
       }
 
@@ -227,7 +227,7 @@
         font-size: 13px;
         position: absolute;
         overflow-x: hidden;
-        height: 120px;
+        height: 135px;
         z-index: 1;
         width: 100%;
         background-color: #212121;
@@ -271,7 +271,7 @@
       }
 
       .text_dolar{
-                font-size:12vw; 
+                font-size:18px; 
             }
      
 
@@ -279,7 +279,13 @@
             .btn-text{
               font-size: 1.5vw;
               text-align: left;
-              width: 13%;
+              width: 19%;
+            }
+
+            .icon-coin{
+              width: 20px;
+              height: 20px;
+              margin-bottom: 5px;
             }
       @media (max-width: 768px) {
             .clock {
@@ -290,9 +296,14 @@
                 font-size: 6vw;
             }
             .btn-text{
-              font-size: 3vw;
+              font-size: 10px;
               text-align: center;
               width: 50%;
+            }
+            .icon-coin{
+              width: 20px;
+              height: 20px;
+              margin-bottom: 5px;
             }
         }
 
@@ -305,7 +316,7 @@
                 width: 120px;
             }
             .text_dolar{
-                font-size: 4vw; 
+                font-size: 3vw; 
             }
            
         }   
@@ -374,7 +385,7 @@ html::-webkit-scrollbar {
       
         <div class="separator">
           <hr class="line" />
-          <p class="text_dolar" style=" background-color: none;">1 $SPY = $0.00147</p>
+          <p class="text_dolar" style=" background-color: none;">1 $REB = $0.008</p>
           <hr class="line" />
         </div>
         <div class="credit-card-info--form">
@@ -384,12 +395,12 @@ html::-webkit-scrollbar {
                 Choose a chain <span style="float: right">▼</span>
               </button>
               <div class="dropdown-content first_input" style="font: 10px;">
-                <a class="middle" href="#">ETH</a>
-                <a class="middle" href="#">BSC</a>
-                <a class="middle" href="#">PLG</a>
-                <a class="middle" href="#">ARB</a>
-                <a  class="middle" href="#">BASE</a>
-                <a  class="middle" href="#">AVAX</a>
+                <a class="middle" href="#"><img src="./assets/images/etherium.png" width="30px" alt="">  ETH</a>
+                <a class="middle" href="#"><img src="./assets/images/money.png" width="30px" alt="">  BSC</a>
+                <a class="middle" href="#"><img src="./assets/images/polygon.png" width="30px" alt="">  POLYGON</a>
+                <a class="middle" href="#"><img src="./assets/images/arbitum.webp" width="30px" alt="">  ARB</a>
+                <a  class="middle" href="#"><img src="./assets/images/base-removebg-preview (1).png" width="30px" alt="">  BASE</a>
+                <a  class="middle" href="#"><img src="./assets/images/avx-removebg-preview.png" width="30px" alt="">  AVAX</a>
               </div>
             </div>
           </div>
@@ -403,9 +414,9 @@ html::-webkit-scrollbar {
 
               </button>
               <div class="dropdown-content second_input" style="width:100%;margin-top: 50px;">
-                <a class="middle" href="#">ETHERIUM</a>
-                <a  class="middle" href="#">USDT</a>
-                <a  class="bottom" href="#">USDC</a>
+                <a class="middle" href="#"><img src="./assets/images/etherium.png" width="30px" alt="">  ETHERIUM</a>
+                <a  class="middle" href="#"><img src="./assets/images/money.png" width="30px" alt="">  USDT</a>
+                <a  class="bottom" href="#"><img src="./assets/images/usdc.png" width="30px" alt="">  USDC</a>
               </div>
               <input placeholder="0" type="number" style="border-top-right-radius: 10px;border-bottom-right-radius:10px ;border-top-left-radius:0px ;border-bottom-left-radius: 0px;padding: 10px;">
             </div>
@@ -445,25 +456,39 @@ html::-webkit-scrollbar {
     </div>
 
     <script>
-     document.querySelectorAll(".first_input a").forEach((item) => {
-    item.addEventListener("click", (event) => {
-      // Get the selected currency text
-      const selectedCurrency = event.target.textContent;
-      // Update the button text for the first button
-      document.getElementById(
-        "currency-button-1"
-      ).innerHTML = `<span style="font-size: 17px;"> ${selectedCurrency}</span> <span style="float: right">▼</span>`;
-    });
+    document.querySelectorAll(".first_input a").forEach((item) => {
+  item.addEventListener("click", (event) => {
+    event.preventDefault(); // Prevent the default link behavior
+
+    const img = item.querySelector('img');
+    const selectedCurrencyText = item.textContent.trim();
+    const selectedCurrencyImgSrc = img.src;
+    const selectedCurrencyAlt = img.alt;
+
+    document.getElementById("currency-button-1").innerHTML = `
+      <img src="${selectedCurrencyImgSrc}" class="icon-coin" alt="${selectedCurrencyAlt}" style="margin-right: 0px;">
+      <span style="font-size: 17px;margin-top:10px;">${selectedCurrencyText}</span>
+      <span style="float: right">▼</span>
+    `;
   });
+});
+
+
+  
 
   document.querySelectorAll(".second_input a").forEach((item) => {
     item.addEventListener("click", (event) => {
-      // Get the selected currency text
-      const selectedCurrency2 = event.target.textContent;
-      // Update the button text for the second button
-      document.getElementById(
-        "currency-button-2"
-      ).innerHTML = ` ${selectedCurrency2} <span style="float: right">▼</span>`;
+      event.preventDefault(); // Prevent the default link behavior
+      
+      const img = item.querySelector('img');
+      const selectedCurrencyText = item.textContent.trim();
+      const selectedCurrencyImgSrc = img.src;
+      const selectedCurrencyAlt = img.alt;
+      
+      document.getElementById("currency-button-2").innerHTML = `
+        <img src="${selectedCurrencyImgSrc}"  class="icon-coin" alt="${selectedCurrencyAlt}" style="margin-right: 0px;">
+        <span class="btn-text">${selectedCurrencyText}</span>
+      `;
     });
   });
 
